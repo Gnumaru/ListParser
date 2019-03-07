@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net472;net471;net47;net46;net462;net461;net452;net451;net45;net40;net35</TargetFrameworks>
+  </PropertyGroup>
+
+  <!-- <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netstandard1.6;netstandard1.5;netstandard1.4;netstandard1.3;netstandard1.2;netstandard1.1;netstandard1.0;net472;net471;net47;net46;net462;net461;net452;net451;net45;net40;net35;net20</TargetFrameworks>
+  </PropertyGroup> -->
+
+  <ItemGroup>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\opt\unity\Editor\Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="UnityEditor">
+      <HintPath>C:\opt\unity\Editor\Data\Managed\UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="NUnit">
+      <HintPath>C:\opt\unity\Editor\Data\Managed\nunit.framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\ListParser.csproj" />
+  </ItemGroup>
+
+  <!-- <ItemGroup>
+    <Reference Include="System">
+      <HintPath>C:\Windows\Microsoft.NET\Framework\v2.0.50727\mscorlib.dll</HintPath>
+    </Reference>
+  </ItemGroup> -->
+
+
+
+  <!-- <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.6' ">
+    <PackageReference Include="System.Runtime" />
+  </ItemGroup> -->
+</Project>
