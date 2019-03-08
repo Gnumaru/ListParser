@@ -175,7 +175,7 @@ namespace lieutenantgames.listparser {
         public string _string;
         public ParsedStringType parsedType;
     }
-    // TODO rename from ListParser to ListProcessor
+
     public static class ListParser {
 
         // since lists can be nested, liststar and listend must be different chars
@@ -183,9 +183,8 @@ namespace lieutenantgames.listparser {
         public const char listEnd = ')'; // cannot be same of list start
         public const char stringStart = '"';
         public const char stringEnd = '"';
-        public const char escape = '\\'; // only inside escaped strings
+        public const char escape = '\\'; // can be used only inside quoted strings
 
-        // returns the number of tokens or -1 on error
 
         public static TokenPos[] tokenize (string src) {
             var count = tokenize (src, null);
@@ -195,16 +194,13 @@ namespace lieutenantgames.listparser {
             count = tokenize (src, tokens);
             return tokens;
         }
+
         public static int tokenize (string self, TokenPos[] tokens) {
             if (self == null || self == "")
                 return -1;
-            // var tokenCount = 0; // TODO delete
-            // var lastState = ParseState.insideBody;
             var curState = ParseState.insideBody;
             var lastToken = TokenType.none;
             var strLen = self.Length;
-            // var neutralLen = neutral.Length;
-            // var isInsideString = false;
             var listStartCount = 0;
             var listEndCount = 0;
             var tokenIdx = 0;
@@ -398,7 +394,6 @@ namespace lieutenantgames.listparser {
             var tokensLength = tokens.Length;
             int idx = 0;
 
-            // retVal.list = new List<ListOrValue> ();
             while (idx < tokensLength) {
                 var item = parseToken (tokens, idx, out idx);
                 if (item.isDefault ())
@@ -437,64 +432,10 @@ namespace lieutenantgames.listparser {
             return curListOrVal;
         }
 
-        // public static void parse (TokenPos[] tokens, int index, out int nextIdx, out ListOrValue retVal) {
-        //     nextIdx = -1;
-        //     retVal = default;
-        //     if (tokens == null)
-        //         return;
-        //     var tokensLen = tokens.Length;
-        //     if (tokensLen < 1)
-        //         return;
-        //     // retVal.value = tokens[index];
-
-        //     var curTok = tokens[index++];
-        //     while (curTok.type != TokenType.list &&
-        //         curTok.type != TokenType.quotedString &&
-        //         curTok.type != TokenType.unquotedString
-        //     ) {
-        //         curTok = tokens[index++];
-        //     }
-        //     // retVal = new ListOrValue ();// todo comment
-
-        //     if (curTok.type == TokenType.list) {
-        //         retVal.list = new List<ListOrValue> ();
-        //         nextIdx = index; // - 1;
-        //         if (nextIdx >= tokensLen) {
-        //             retVal.value = curTok;
-        //             return;
-        //         } else {
-        //             // TokenPos nextTok;
-        //             var nextTok = tokens[nextIdx]; // peek next token just to know if list ended
-        //             while (nextTok.start < curTok.end && nextIdx < tokensLen) {
-        //                 if (nextTok.type != TokenType.neutral) {
-        //                     ListOrValue nxtLstItm;
-        //                     parse (tokens, nextIdx, out nextIdx, out nxtLstItm);
-        //                     retVal.list.Add (nxtLstItm);
-        //                     if (nextIdx >= tokensLen)
-        //                         break;
-        //                 } else {
-        //                     nextIdx++;
-        //                 }
-
-        //                 nextTok = tokens[nextIdx];
-        //             }
-        //         }
-
-        //     } else {
-        //         nextIdx = index;
-        //     }
-
-        //     retVal.value = curTok;
-        // }
-
         public static ListOrValue tokenizeAndParse (string src) {
             var tokens = tokenize (src);
             var ret = parseRoot (tokens);
             return ret;
-            // int nextIdx;
-            // ListOrValue retval;
-            // parse (tokens, 0, out nextIdx, out retval);
-            // return retval;
         }
     }
 }

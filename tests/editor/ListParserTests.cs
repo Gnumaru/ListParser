@@ -113,10 +113,6 @@ namespace lieutenantgames.listparser {
             Assert.AreEqual (6, listOrVal.m_list[0].m_list[1].m_value.m_start);
             Assert.AreEqual (14, listOrVal.m_list[0].m_list[1].m_value.m_end);
 
-            // EditorGUIUtility.systemCopyBuffer = listOrVal.m_list[0].toLisp ();
-            // UDebug.Log (EditorGUIUtility.systemCopyBuffer);
-            // EditorGUIUtility.systemCopyBuffer = listOrVal.m_list[0].toLisp (true);
-            // UDebug.Log (EditorGUIUtility.systemCopyBuffer);
 
             str = "(a(b c)d)";
             listOrVal = ListParser.tokenizeAndParse (str);
@@ -203,7 +199,7 @@ namespace lieutenantgames.listparser {
             EditorGUIUtility.systemCopyBuffer = listOrVal.m_list[0].toLisp (true, 0, false, 4);
             UDebug.Log (EditorGUIUtility.systemCopyBuffer);
 
-            str = "(eu  tu  ele  (nos vos eles)  era  uma  vez  (um (negocio legal) (negcio baum) negocio sensacional)  acabou  de  verdade)";
+            str = "(eu  tu  ele  (nos vos eles)  era  uma  vez  (um (negocio legal) (negocio) negocio sensacional)  acabou  de  verdade)";
             listOrVal = ListParser.tokenizeAndParse (str);
             EditorGUIUtility.systemCopyBuffer = listOrVal.m_list[0].toLisp (true);
             UDebug.Log (EditorGUIUtility.systemCopyBuffer);
