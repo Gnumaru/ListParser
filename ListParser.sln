@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9A6EDFB3
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListParserTests", "tests\editor\ListParserTests.csproj", "{593DD224-0CCD-4BCF-A545-726457E3A956}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = ".netcore", "tests\.netcore\.netcore.csproj", "{BC7499A5-29BB-4A06-AAD0-590F1066F5CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,8 +48,21 @@ Global
 		{593DD224-0CCD-4BCF-A545-726457E3A956}.Release|x64.Build.0 = Release|Any CPU
 		{593DD224-0CCD-4BCF-A545-726457E3A956}.Release|x86.ActiveCfg = Release|Any CPU
 		{593DD224-0CCD-4BCF-A545-726457E3A956}.Release|x86.Build.0 = Release|Any CPU
+		{BC7499A5-29BB-4A06-AAD0-590F1066F5CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC7499A5-29BB-4A06-AAD0-590F1066F5CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC7499A5-29BB-4A06-AAD0-590F1066F5CC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BC7499A5-29BB-4A06-AAD0-590F1066F5CC}.Debug|x64.Build.0 = Debug|Any CPU
+		{BC7499A5-29BB-4A06-AAD0-590F1066F5CC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BC7499A5-29BB-4A06-AAD0-590F1066F5CC}.Debug|x86.Build.0 = Debug|Any CPU
+		{BC7499A5-29BB-4A06-AAD0-590F1066F5CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC7499A5-29BB-4A06-AAD0-590F1066F5CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC7499A5-29BB-4A06-AAD0-590F1066F5CC}.Release|x64.ActiveCfg = Release|Any CPU
+		{BC7499A5-29BB-4A06-AAD0-590F1066F5CC}.Release|x64.Build.0 = Release|Any CPU
+		{BC7499A5-29BB-4A06-AAD0-590F1066F5CC}.Release|x86.ActiveCfg = Release|Any CPU
+		{BC7499A5-29BB-4A06-AAD0-590F1066F5CC}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{593DD224-0CCD-4BCF-A545-726457E3A956} = {9A6EDFB3-47D0-47FA-A5A4-EE11EEC1FFE6}
+		{BC7499A5-29BB-4A06-AAD0-590F1066F5CC} = {9A6EDFB3-47D0-47FA-A5A4-EE11EEC1FFE6}
 	EndGlobalSection
 EndGlobal
