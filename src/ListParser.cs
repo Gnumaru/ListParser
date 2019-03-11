@@ -704,11 +704,17 @@ namespace lieutenantgames.listparser {
         }
 
         public static string primitiveToString(object obj) {
-            var type = obj.GetType();
-            if (type == typeof(float))
+            if (obj is float)
                 return ((float)obj).ToString(CultureInfo.InvariantCulture);
-            else if (type == typeof(double))
+
+            else if (obj is double)
                 return ((double)obj).ToString(CultureInfo.InvariantCulture);
+
+            else if (obj is Type) {
+                var t = (Type)obj;
+                return $"{t.Assembly.GetName().Name}.{t.ToString()}";
+            }
+
             return obj.ToString();
         }
 
